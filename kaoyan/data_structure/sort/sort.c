@@ -179,7 +179,7 @@ int main(void)
 	     i<ARRAY_LEN(sort_funcs,struct sort_func);
 	     i++)
 	{
-	        int unsorted[] = {49,38,65,97,76,13,27,49};
+		int unsorted[] = {49,38,65,97,76,13,27,49};
 		printf("%ssort function%s:%s%s\n",
 				BLUE,YELLOW,sort_funcs[i].name,ENDC);
 		(*sort_funcs[i].func)(unsorted,ARRAY_LEN(unsorted,int));
