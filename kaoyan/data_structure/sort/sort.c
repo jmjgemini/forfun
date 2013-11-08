@@ -165,7 +165,7 @@ int main(void)
 		void (*func)(int*,int);
 		const char *name;
 	};
-	struct sort_func sort_funcs[8] = 
+	struct sort_func sort_funcs[] = 
 		       {
 			{insert_sort,"insert_sort"},
 			{bubble_sort,"bubble_sort"},
@@ -176,10 +176,10 @@ int main(void)
 		       };
 
 	for (int i = 0;
-	     i<6;
+	     i<ARRAY_LEN(sort_funcs,struct sort_func);
 	     i++)
 	{
-	        int unsorted[8] = {49,38,65,97,76,13,27,49};
+	        int unsorted[] = {49,38,65,97,76,13,27,49};
 		printf("%ssort function%s:%s%s\n",
 				BLUE,YELLOW,sort_funcs[i].name,ENDC);
 		(*sort_funcs[i].func)(unsorted,ARRAY_LEN(unsorted,int));
