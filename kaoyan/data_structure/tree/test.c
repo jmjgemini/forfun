@@ -5,6 +5,7 @@ void visit(TreeNode *node)
 {
 	printf("%d ",node->key);
 }
+
 int main(void)
 {
 	SearchTree tree= NULL;
