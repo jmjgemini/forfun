@@ -19,5 +19,6 @@ int main(void)
 	TreeNode *p = search_tree_find_max(tree);
 	if (p != NULL)
 		printf("max = %d\n",p->key);
+	search_tree_free(tree);
 	return 0;
 }

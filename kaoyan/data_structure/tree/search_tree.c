@@ -69,3 +69,14 @@ void search_tree_middleorder_travesal(SearchTree t,visit_func visit)
 {
 	btree_middleorder_traversal(t,visit);
 }
+
+void search_tree_free(SearchTree t)
+{
+	if (t == NULL)
+		return;
+	search_tree_free(t->lchild);
+	search_tree_free(t->rchild);
+	free(t);
+}
+
+

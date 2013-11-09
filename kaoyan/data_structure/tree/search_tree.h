@@ -15,4 +15,6 @@ void search_tree_preorder_travelsal(SearchTree t,visit_func visit);
 void search_tree_postorder_travelsal(SearchTree t,visit_func visit);
 void search_tree_middleorder_travesal(SearchTree t,visit_func visit);
 
+void search_tree_free(SearchTree t);
+
 #endif
