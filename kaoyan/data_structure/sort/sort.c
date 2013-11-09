@@ -182,7 +182,7 @@ int main(void)
 		int unsorted[] = {49,38,65,97,76,13,27,49};
 		printf("%ssort function%s:%s%s\n",
 				BLUE,YELLOW,sort_funcs[i].name,ENDC);
-		(*sort_funcs[i].func)(unsorted,ARRAY_LEN(unsorted,int));
+		sort_funcs[i].func(unsorted,ARRAY_LEN(unsorted,int));
 		printf("output:\n");
 		for (int j = 0;
 		         j<ARRAY_LEN(unsorted,int);
