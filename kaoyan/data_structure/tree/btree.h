@@ -20,5 +20,6 @@ typedef void (*visit_func)(TreeNode*);
 void btree_preorder_traversal(Btree t,visit_func visit);
 void btree_postorder_traversal(Btree t,visit_func visit);
 void btree_middleorder_traversal(Btree t,visit_func visit);
+void btree_level_travelsal(Btree t,visit_func visit);
 
 #endif

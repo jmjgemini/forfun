@@ -69,6 +69,46 @@ void search_tree_middleorder_travesal(SearchTree t,visit_func visit)
 {
 	btree_middleorder_traversal(t,visit);
 }
+void search_tree_level_travelsal(Btree t,visit_func visit)
+{
+	btree_level_travelsal(t,visit);
+}
+
+void search_tree_delete(SearchTree *t,key_t key)
+{
+	if (*t == NULL)
+	{
+		fprintf(stderr, "search_tree_delete:Element not found!\n");
+		return;
+	}
+	if ((*t)->key == key)
+	{
+		/* found !*/
+		if ((*t)->lchild && (*t)->rchild)
+		{
+			/* have two childs */
+			Position p = search_tree_find_max((*t)->rchild);
+			(*t)->key = p->key;
+			search_tree_delete(&((*t)->rchild),p->key);
+		}
+		else
+		{
+			Position p;
+			/* have one child or no child */
+			if ((*t)->lchild == NULL)
+				p = (*t)->rchild;
+			else
+				p = (*t)->lchild;
+			free(*t);
+			*t = p;
+		}
+	}
+	else if (key < (*t)->key)
+		search_tree_delete(&((*t)->lchild),key);
+	else
+		search_tree_delete(&((*t)->rchild),key);
+
+}
 
 void search_tree_free(SearchTree t)
 {

@@ -19,6 +19,14 @@ int main(void)
 	TreeNode *p = search_tree_find_max(tree);
 	if (p != NULL)
 		printf("max = %d\n",p->key);
+	search_tree_delete(&tree,3);
+	printf("after delete 3\n");
+	search_tree_preorder_travelsal(tree,visit);
+	printf("\n");
+
+	printf("level travelsal\n");
+	search_tree_level_travelsal(tree,visit);
+	printf("\n");
 	search_tree_free(tree);
 	return 0;
 }

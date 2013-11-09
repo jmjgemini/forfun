@@ -14,7 +14,9 @@ Position search_tree_find_max(SearchTree t);
 void search_tree_preorder_travelsal(SearchTree t,visit_func visit);
 void search_tree_postorder_travelsal(SearchTree t,visit_func visit);
 void search_tree_middleorder_travesal(SearchTree t,visit_func visit);
+void search_tree_level_travelsal(Btree t,visit_func visit);
 
+void search_tree_delete(SearchTree *t,key_t key);
 void search_tree_free(SearchTree t);
 
 #endif
